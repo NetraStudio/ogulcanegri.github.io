@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oğulcan Eğri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../images/20048676-102671354586_1-s5-v1.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+     body {
+      background-color: #131313;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+      font-family: 'Rubik', sans-serif;
+    }
+    .loader{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #131313;
+    z-index: 9999;
+    }
+    .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    }
+    
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    
+    a {
+      color: white;
+      margin-right: 20px;
+    }
+    .sc_media{
+      margin-right: 20px;
+    }
+    .box {
+      width: 400px;
+      height: 100px;
+      background-color: #131313;
+      margin-bottom: 10px;
+      border: 2px solid white;
+      border-radius: 20px;
+      position: relative;
+      opacity: 50;
+    }
+    .box img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+    }
+    .box .text {
+      position: absolute;
+      left: 120px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      font-weight: bold;
+    }
+    @media (max-width: 432px) {
+      .container .box {
+        width: 90%;
+      }
+      body{
+        font-size: 5px;
+      }
+      h1{
+        font-size: 25px !important;
+      }
+      .p{
+        font-size: 10px;
+      }
+      .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    }
+    .social_media{
+      text-decoration: none;
+      color: gray;
+      font-size: 15px;
+    }
+    @keyframes glow {
+      0% {
+        opacity: 0;    
+      }
+      50% {
+        opacity: 1;
+      }    
+      100% {
+        opacity: 0;
+      }
+    }
+    #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    }
+  .loaded #progress-bar {
+  opacity: 0;
+  }
+  </style>
+</head>
+<body>
+  <div id="loader" class="loader"><img src="../images/loading.svg" width="100px"></div>
+  <div id="content" style="display: none;">
+  <div id="progress-bar"></div>
+
+  <div class="container">
+    <h1>Welcome To Contact 💬</h1>
+    <p>To contact me, you can send an e-mail to my Instagram address or oejan@post.com.</p>
+    <a class="social_media" href="https://instagram.com/ou2lcan">İnstagram</a>
+    <a class="social_media" href="mailto:oejan@post.com">E-Mail</a>
+    <br>
+    <hr>
+    <p>2023 - 2024 All Legal Rights Reserved</p>
+    <a class="social_media" href="../index.html">HomePage</a>
+    <a class="social_media" href="index.html">Contact</a>
+  </div>
+  </div>
+</body>
+<script>
+    window.addEventListener('load', function() {
+  document.querySelector('#progress-bar').classList.add('loaded');
+});
+
+</script>
+<script>
+  window.onload = function() {
+      setTimeout(function() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("content").style.display = "block";
+      }, 3000);
+  };
+</script>
+</html>
