@@ -1,0 +1,2 @@
+card-1:Blog Yazısı Başlığı 1:Bu, blog yazısı içeriğinin kısa bir özetidir. Daha fazlası için yazının tamamını okuyabilirsiniz...:https://example.com/post1
+card-2:Blog Yazısı Başlığı 2:Bu, blog yazısı içeriğinin kısa bir özetidir. Daha fazlası için yazının tamamını okuyabilirsiniz...:https://example.com/post2

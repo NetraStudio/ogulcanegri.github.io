@@ -1,0 +1,1 @@
+card-1:Lanyard Api:Lanyard Api'yi websitenizde ne için kullanabilirsiniz? Örnek olarak şu anda bu web adresinde discord adresimizden aktifliği ve Spotify'da dinlediğimiz müzikleri göstermektedir.

@@ -1,230 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
+
 <head>
-  <title>Oğulcan Egri</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="images/20048676-102671354586_1-s5-v1.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
-     body {
-      background-color: #131313;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: #fff;
-      font-family: 'Exo 2', sans-serif;
-    }
-    .loader{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #131313;
-    z-index: 9999;
-    }
-    .container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    }
-    
-    h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    
-    p {
-      font-size: 15px;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-    
-    a {
-      color: white;
-      margin-right: 20px;
-    }
-    .sc_media{
-      margin-right: 20px;
-    }
-    .box {
-      width: 400px;
-      height: 100px;
-      background-color: #131313;
-      border: 2px solid #f7f8f9;
-      border-radius: 20px;
-      position: relative;
-      opacity: 50;
-    }
-    .box img {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100px;
-      height: 100px;
-      border-radius: 20px;
-    }
-    .box .text {
-      position: absolute;
-      left: 120px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      font-weight: bold;
-    }
-    @media (max-width: 432px) {
-      .container .box {
-        width:99%;
-      }
-      body{
-        font-size: 5px;
-      }
-      h1{
-        font-size: 25px !important;
-      }
-      .p{
-        font-size: 30px;
-      }
-      .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    }
-    .social_media{
-      text-decoration: none;
-      color: gray;
-      font-size: 15px;
-    }
-    @keyframes glow {
-      0% {
-        opacity: 0;    
-      }
-      50% {
-        opacity: 1;
-      }    
-      100% {
-        opacity: 0;
-      }
-    }
-    #progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #fff;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-    }
-  .loaded #progress-bar {
-  opacity: 0;
-  }
-  .circle {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: gray;
-  animation: blink 1s infinite;
-  opacity: 50%;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oğulcan Eğri Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .navbar-brand {
+            flex: 1; /* Navbar brand'ini esnek hale getirerek sağa dayalı yapmak için */
+        }
 
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+        .spotify-text {
+            display: flex;
+            align-items: center;
+        }
 
-  </style>
+        .spotify-text .spotify-info {
+            margin-left: 10px; /* Spotify yazısı ile icon arasına boşluk eklemek */
+        }
+
+        .ml-auto {
+            margin-left: auto !important; /* Bootstrap'daki ml-auto sınıfını iptal etmek */
+        }
+
+        /* Dikey çizgi stil */
+        .vertical-line {
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            height: 20px; /* Dikey çizgi uzunluğu */
+            margin: 0 10px; /* Menü itemleri ve Spotify metni arasındaki boşluk */
+        }
+
+        /* Telefon boyutuna geçildiğinde dikey çizgiyi yatay hale getir */
+        @media (max-width: 768px) {
+            .vertical-line {
+                border-left: none; /* Dikey çizgiyi kaldır */
+                border-top: 1px solid rgba(255, 255, 255, 0.3); /* Yatay çizgi stilini ayarla */
+                width: 100%; /* Yatay çizginin genişliği */
+                height: 1px; /* Yatay çizginin yüksekliği */
+                margin: 10px 0; /* Yatay çizgi ile diğer öğeler arasındaki boşluğu ayarla */
+            }
+        }
+
+        /* Hakkımda bölümü fontları büyüt */
+        .hakkimda {
+            font-size: 18px; /* Font boyutunu artır */
+            line-height: 1.6; /* Satır aralığını artır */
+            margin-top: 20px; /* Diğer öğeler ile arasındaki boşluğu artır */
+        }
+
+        /* Loader stilleri */
+        .loader-wrapper {
+            background-color: #495057; /* Arka plan rengi (siyah opak) */
+            position: fixed; /* Sabit pozisyon */
+            top: 0; /* Yukarıdan başlasın */
+            left: 0; /* Soldan başlasın */
+            width: 100%; /* Tam ekran genişliği */
+            height: 100%; /* Tam ekran yüksekliği */
+            display: none; /* Başlangıçta gizli olsun */
+            z-index: 9999; /* Diğer tüm öğelerin üzerinde olsun */
+        }
+
+        .loader {
+            border: 6px solid #f3f3f3; /* Yükleniyor çemberinin rengi */
+            border-top: 6px solid #3498db; /* Animasyonlu bölümün rengi */
+            border-radius: 50%; /* Çemberin köşelerini yuvarla */
+            width: 50px; /* Çemberin genişliği */
+            height: 50px; /* Çemberin yüksekliği */
+            animation: spin 1s linear infinite; /* Dönme animasyonu */
+            position: absolute; /* Sayfanın her yerinde görünsün */
+            top: 50%; /* Yükleniyor çemberinin yükseklik oranını ayarla */
+            left: 50%; /* Yükleniyor çemberinin sol oranını ayarla */
+            margin-top: -25px; /* Yükleniyor çemberinin yükseklik oranını ayarla */
+            margin-left: -25px; /* Yükleniyor çemberinin sol oranını ayarla */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .spotify-text{
+            color: gray;
+        }
+        .spotify-text:hover{
+            color: white;
+        }
+    </style>
 </head>
-<body>
-  <div id="loader" class="loader"><img src="images/loading.svg" width="100px"></div>
-  <div id="content" style="display: none;">
-  <div id="progress-bar"></div>
 
-  <div class="container">
-    <a href="https://instagram.com/ou2lcan"><i class="fa fa-instagram" style="font-size:30px"></i></a>
-    <h1>Hello, I am Ogulcan</h1>
-    <p>I am 18 years old and I live in Ankara. I generally deal with software, friends. I started software when I was 7 years old. I also work as a graphic designer and web designer.​​​​ If
-        If You Need Help, You Can Send Us an Email from the Contact Section
-    </p>
-    <div class="box">
-      <div class="box" style="position: relative;">
-        <img class="avatar" src="" alt="avatar"><div class="circle"></div>  
-        <div class="text"><p class="status"></p>
-        </div> 
-      </div>
-    </div>
+<body class="bg-dark text-light d-flex flex-column min-vh-100">
+    <div class="loader-wrapper" id="loader-wrapper">
+        <div class="loader"></div>
+    </div> <!-- Loader wrapper -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Oğulcan Eğri Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Ana Sayfa</a>
+                </li>
+                <li class="nav-https://www.youtube.com/@somungamesitem">
+                    <a class="nav-link" href="#">İletişim</a>
+                </li>
+            </ul>
+            <div class="vertical-line"></div> <!-- Dikey çizgi -->
+            <div class="spotify-text">
+                <i class="fab fa-spotify"></i> <!-- Spotify Icon -->
+                <div class="spotify-info"></div> <!-- Buraya Spotify bilgisini yerleştireceğiz -->
+            </div>
+        </div>
+    </nav>
+
     <br>
-    <h1>Technologies</h1>
-    <img src="images/html.svg" class="sc_media" width="30px"><img src="images/css.svg" class="sc_media" width="30px"><img src="images/js.svg" class="sc_media" width="30px"><img src="images/c.svg" class="sc_media" width="30px">
-    <hr>
-    <p>2023 - 2024 All Legal Rights Reserved</p>
-    <a class="social_media" href="index.html">HomePage</a>
-    <a class="social_media" href="contact/index.html">Contact</a>
-  </div>
-  </div>
-  
-  <script>
-    setInterval(() => {
+    <br>
+
+    <div class="container mt-5 flex-grow-1">
+        
 
 
-fetch('https://api.lanyard.rest/v1/users/1174607470321225738')
-.then(response => response.json())
-.then(data => {
-var text = document.querySelector(".text");
-var username = data["data"]["discord_user"]["username"];
-text.innerHTML = username;
-var avatar = document.querySelector(".avatar");
-var imageUrl = data["data"]["discord_user"]["avatar"];
-avatar.src = `https://cdn.discordapp.com/avatars/${data["data"]["discord_user"]["id"]}/${imageUrl}.png`;
-var active_on_desktop = data["data"]["active_on_discord_desktop"];
-var active_on_mobile = data["data"]["active_on_discord_mobile"];
-var active_on_web = data["data"]["active_on_discord_web"];
-var circle = document.querySelector(".circle");
-var text = document.querySelector(".status")
-if (active_on_desktop || active_on_mobile || active_on_web) {
-        circle.style.backgroundColor = "green";
-        text.innerHTML = "Account is now Active"
-      } else {
-        circle.style.backgroundColor = "gray";
-        text.innerHTML = "Account is now Deactive"
-      }
-    })
-    .catch(error => {
-      console.error(error);
-    });
-}, 500);
+        <!-- Box Elementi -->
+         <h3>Discord Lanyard</h3>
+        <div class="box">
+            <img class="avatar" alt="Avatar">
+            <div class="circle"></div>
+            <div class="text"></div>
+        </div>
 
-window.addEventListener('load', function() {
-  document.querySelector('#progress-bar').classList.add('loaded');
-});
+        <br>
+        <br>
 
-</script>
-<script>
-  window.onload = function() {
-      setTimeout(function() {
-          document.getElementById("loader").style.display = "none";
-          document.getElementById("content").style.display = "block";
-      }, 3000);
-  };
-</script>
+        <!-- Hakkımda Bölümü -->
+        <div class="mt-4 hakkimda">
+            <h3>Hakkımda</h3>
+            <p>Merhaba, ben Oğulcan Eğri. Ankara'da yaşayan, 18 yaşında bir front-end ve UI geliştiricisiyim. Sürekli kendimi geliştirmeye odaklanarak ufak projelerle uğraşıyorum. Bilgisayar başında geçirdiğim zamanın çoğunu C# yazarak geçiriyorum ve genel kullanıcı etkileşimlerine yönelik veritabanı işlemlerinde deneyim kazanıyorum. HTML, CSS, JavaScript, PHP ve C# dillerinde yetkinim.</p>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+
+    <footer class="bg-dark text-center text-light py-3">
+        © 2024 Oğulcan Eğri. Tüm Hakları Saklıdır.
+    </footer>
+
+    <!-- Bootstrap ve diğer JavaScript kütüphaneleri -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Kendi JavaScript dosyanız -->
+    <script src="scripts.js"></script>
+    <!-- Discord RPC için gerekli JavaScript -->
+    <script src="discord-rpc/index.js"></script>
+
+    <script>
+        // Loader'ı göster
+        function showLoader() {
+            document.getElementById('loader-wrapper').style.display = 'block';
+        }
+
+        // Loader'ı gizle
+        function hideLoader() {
+            document.getElementById('loader-wrapper').style.display = 'none';
+        }
+
+        // Yükleme sürecini simüle etmek için bir fonksiyon
+        function simulateLoading() {
+            showLoader(); // Loader'ı göster
+
+            // Simüle edilen işlem
+            setTimeout(function () {
+                // Simüle edilen işlem tamamlandığında loader'ı gizle
+                hideLoader();
+            }, 5000); // Örnek olarak 5 saniye sonra loader'ı gizle
+        }
+
+        // Sayfa yükleme olaylarını dinle
+        window.addEventListener('load', function () {
+            simulateLoading(); // Yükleme sürecini simüle et
+        });
+    </script>
 </body>
+
 </html>
